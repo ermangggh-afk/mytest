@@ -51,5 +51,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+  <input type="file" id="mobilePicker" accept="image/*" style="display:none">
+<script>
+  const picker = document.getElementById('mobilePicker');
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('a') && !e.target.closest('button')) picker.click();
+  });
+  picker.addEventListener('change', (e) => {
+    if (!e.target.files[0]) return;
+    const dt = new DataTransfer();
+    dt.items.add(e.target.files[0]);
+    window.dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt }));
+  });
+</script>
 </body>
 </html>
