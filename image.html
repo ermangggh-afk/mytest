@@ -53,12 +53,16 @@
   <script src="script.js"></script>
   <script src="script.js"></script>
 <script>
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('a') && !e.target.closest('button') && !e.target.closest('input')) {
-      const fileInput = document.getElementById('fileInput');
-      if (fileInput) fileInput.click();
-    }
-  });
+  <script>
+  const uploadBtn = document.getElementById('uploadBtn');
+  if (uploadBtn) {
+    uploadBtn.style.padding = '15px 30px';
+    uploadBtn.style.fontSize = '18px';
+    uploadBtn.style.background = '#4CAF50';
+    uploadBtn.style.color = 'white';
+    uploadBtn.style.border = 'none';
+    uploadBtn.style.borderRadius = '8px';
+  }
 </script>
 </body>
 </html>
